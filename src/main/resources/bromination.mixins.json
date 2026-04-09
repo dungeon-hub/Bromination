@@ -9,7 +9,6 @@
     "bridge.ChatMixin",
     "chat.ChatHudLineMixin",
     "chat.ChatHudLineMixinVisible",
-    "chat.ClickMixin",
     "chat.KeyboardMixin",
     "chat.MessageMixin"
   ],

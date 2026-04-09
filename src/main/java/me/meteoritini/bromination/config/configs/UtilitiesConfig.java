@@ -7,9 +7,6 @@ public class UtilitiesConfig {
     public boolean collapseChat = true;
 
     @SerialEntry
-    public boolean copyChat = true;
-
-    @SerialEntry
     public boolean unlimitedChat = true;
 
     @SerialEntry

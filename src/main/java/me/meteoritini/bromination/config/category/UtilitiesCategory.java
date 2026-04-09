@@ -16,18 +16,6 @@ public class UtilitiesCategory {
                                 .description(OptionDescription.of(Text.literal("Utilities for utilizing the minecraft chat")))
                                 .option(
                                         Option.<Boolean>createBuilder()
-                                                .name(Text.literal("Copy chat"))
-                                                .description(OptionDescription.of(Text.literal("CTRL Click a message to copy it.")))
-                                                .binding(
-                                                        defaults.utilitiesConfig.copyChat,
-                                                        () -> config.utilitiesConfig.copyChat,
-                                                        newVal -> config.utilitiesConfig.copyChat = newVal
-                                                )
-                                                .controller(BooleanControllerBuilder::create)
-                                                .build()
-                                )
-                                .option(
-                                        Option.<Boolean>createBuilder()
                                                 .name(Text.literal("Collapse chat"))
                                                 .description(OptionDescription.of(Text.literal("Collapse repeating messages.")))
                                                 .binding(

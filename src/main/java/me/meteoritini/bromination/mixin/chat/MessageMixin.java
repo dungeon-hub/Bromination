@@ -6,7 +6,6 @@ import me.meteoritini.bromination.config.overrides.IChatHudLine;
 import me.meteoritini.bromination.util.Miner;
 import net.minecraft.client.gui.hud.ChatHud;
 import net.minecraft.client.gui.hud.ChatHudLine;
-import net.minecraft.text.Style;
 import net.minecraft.text.Text;
 import net.minecraft.util.Colors;
 import org.spongepowered.asm.mixin.Final;
@@ -46,12 +45,12 @@ public class MessageMixin {
         return message;
     }
 
-    @Inject(method = "addMessage(Lnet/minecraft/client/gui/hud/ChatHudLine;)V", at = @At(value = "INVOKE", target = "Ljava/util/List;remove(I)Ljava/lang/Object;"), cancellable = true)
+    @Inject(method = "addMessage(Lnet/minecraft/client/gui/hud/ChatHudLine;)V", at = @At(value = "INVOKE", target = "Ljava/util/List;removeLast()Ljava/lang/Object;"), cancellable = true)
     private void mixin_addMessage(ChatHudLine message, CallbackInfo ci) {
         if(BrominationConfig.getInstance().utilitiesConfig.unlimitedChat) ci.cancel();
     }
 
-    @Inject(method = "addVisibleMessage(Lnet/minecraft/client/gui/hud/ChatHudLine;)V", at = @At(value = "INVOKE", target = "Ljava/util/List;remove(I)Ljava/lang/Object;"), cancellable = true)
+    @Inject(method = "addVisibleMessage(Lnet/minecraft/client/gui/hud/ChatHudLine;)V", at = @At(value = "INVOKE", target = "Ljava/util/List;removeLast()Ljava/lang/Object;"), cancellable = true)
     private void mixin_addVisibleMessage(ChatHudLine message, CallbackInfo ci) {
         if(BrominationConfig.getInstance().utilitiesConfig.unlimitedChat) ci.cancel();
     }
